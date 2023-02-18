@@ -1,0 +1,41 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
+
+input[type=number] {
+  padding: 5px 6px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  width: 5em;
+}
+input[type=number]#damagebasic {
+padding: 5px 6px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+width: 7em;
+}
+input[type=number]#period, #projectiles, #multi, #chan, #eleper {
+padding: 5px 6px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+width: 4em;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 10px 18px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
