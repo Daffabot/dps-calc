@@ -11,16 +11,10 @@ function ErrAlert(eCode, objName){
 		case 0:
 			AlertMSG = "[Error 0] - Cannot compute, " + oN + " is less than one";
 			document.getElementById("showinputhere").innerHTML = AlertMSG;
-			document.getElementById("showinputhere1").innerHTML = "";
-			document.getElementById("showinputhere2").innerHTML = "";
-			document.getElementById("showinputhere3").innerHTML = "";
 		break;
 		case 1:
 			AlertMSG = "[Error 1] - " + oN + " does not contain valid numbers";
 			document.getElementById("showinputhere").innerHTML = AlertMSG;
-			document.getElementById("showinputhere1").innerHTML = "";
-			document.getElementById("showinputhere2").innerHTML = "";
-			document.getElementById("showinputhere3").innerHTML = "";
 		break;
 	}
 }
@@ -39,9 +33,6 @@ function clearText(){ //clears out old values on form.
 	document.getElementById("elevalue").value = "";
 	//calc
 	document.getElementById("showinputhere").innerHTML = "";
-	document.getElementById("showinputhere1").innerHTML = "";
-	document.getElementById("showinputhere2").innerHTML = "";
-	document.getElementById("showinputhere3").innerHTML = "";
 }
 function openGitHub(){
 	window.open("https://github.com/Daffabot")
@@ -65,19 +56,11 @@ function displayMessage(){
     let effect
     = Number(effvalue) / Number(period);
     let element = Number(elevalue) * (Number(magazine) * (Number(eleper) / Number(100)));
-    let dps = ((Number(magazine) * Number(damagebasic)) / ((Number(magazine) / Number(rps)) + Number(reload))) * Number(projectiles);
-	let eff = Number(dps) + Number(effect);
-	let ele = (((Number(magazine) * Number(damagebasic)) + Number(element)) / ((Number(magazine) / Number(rps)) + Number(reload))) * Number(projectiles);
-	let cri = Number(dps) + Number(crit);
+	let total = (((Number(magazine) * Number(damagebasic)) + Number(element)) / ((Number(magazine) / Number(rps)) + Number(reload))) * Number(projectiles);
+	let dps = Number(total) + Number(crit) + Number(effect);
     dps += " DPS (Damage Per Second)";
-	eff += " DPS (Damage Per Second) with Effect Damage";
-	ele += " DPS (Damage Per Second) with Element Damage";
-	cri += " DPS (Damage Per Second) with Critical Damage";
     if (dps){
         document.getElementById("showinputhere").innerHTML = dps;
-		document.getElementById("showinputhere1").innerHTML = eff;
-		document.getElementById("showinputhere2").innerHTML = ele;
-		document.getElementById("showinputhere3").innerHTML = cri;
     }
     if (isNaN(magazine)) {
 		ErrAlert(1,"Magazine Size");
