@@ -53,11 +53,10 @@ function displayMessage(){
     let eleper = document.getElementById("eleper").value;
     let elevalue = document.getElementById("elevalue").value;
     let crit = (Number(magazine) * (Number(chan) / Number(100))) * ((Number(damagebasic) * Number(multi)) - Number(damagebasic));
-    let effect
-    = Number(effvalue) / Number(period);
+    let effect = Number(effvalue) / Number(period);
     let element = Number(elevalue) * (Number(magazine) * (Number(eleper) / Number(100)));
-	let total = (((Number(magazine) * Number(damagebasic)) + Number(element)) / ((Number(magazine) / Number(rps)) + Number(reload))) * Number(projectiles);
-	let dps = Number(total) + Number(crit) + Number(effect);
+    let total = (((Number(magazine) * Number(damagebasic)) + Number(crit) + Number(element)) / ((Number(magazine) / Number(rps)) + Number(reload))) * Number(projectiles);
+    let dps = Number(total) + Number(effect);
     dps += " DPS (Damage Per Second)";
     if (dps){
         document.getElementById("showinputhere").innerHTML = dps;
