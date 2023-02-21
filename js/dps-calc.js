@@ -73,6 +73,9 @@ function displayMessage(){
 	if (isNaN(damagebasic)) {
 		ErrAlert(1,"Damage Per Bullet");
 	}
+	if (isNaN(multi)) {
+		ErrAlert(1,"Multiplier Of Base Damage");
+	}
 	//if base values are less than 1 than we cannot compute.
 	if (magazine < 1) {
 		ErrAlert(0,"Magazine Size");
@@ -85,5 +88,8 @@ function displayMessage(){
 	}
 	if (reload < 1) {
 		ErrAlert(0,"Reload Time");
+	}
+	if (multi < 1) {
+		ErrAlert(0,"Multiplier Of Base Damage");
 	}
 }
