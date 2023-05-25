@@ -11,7 +11,7 @@ You can <a href="https://www.daffabot.my.id/dps-calc">Click here</a> for demo.
 ```bash
 git clone https://github.com/Daffabot/dps-calc.git
 ```
-2. Open russian-roulette/index.html file in your browser
+2. Open dps-calc/index.html file in your browser
 
 ## Example Usage
 ```javascript
