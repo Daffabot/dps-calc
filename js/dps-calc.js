@@ -1,6 +1,7 @@
 // DPS Calculator - JavaScript edition By Daffabot!
 //============================================================================
 // v0.01 - initial start of project totally works
+// v0.02 - add a save local storage
 //============================================================================
 //Visit Daffabot (https://github.com/Daffabot) for script in github
 //Credit must stay intact for use
@@ -33,6 +34,15 @@ function clearText(){ //clears out old values on form.
 	document.getElementById("elevalue").value = "";
 	//calc
 	document.getElementById("showinputhere").innerHTML = "";
+	const myDiv = document.getElementById('outputDiv');
+	const paragraphs = myDiv.getElementsByTagName('p');
+	
+	// Menghapus semua elemen <p> di dalam <div>
+	while (paragraphs.length > 0) {
+	myDiv.removeChild(paragraphs[0]);
+	}
+	localStorage.removeItem('storedStrings');
+	localStorage.clear();
 }
 function openGitHub(){
 	window.open("https://github.com/Daffabot")
@@ -40,6 +50,7 @@ function openGitHub(){
 function openDonate(){
 	window.open("https://paypal.me/daffabot")
 }
+let count = 0;
 function displayMessage(){
     let magazine = document.getElementById("magazine").value;
     let rps = document.getElementById("rps").value;
@@ -57,7 +68,37 @@ function displayMessage(){
     let element = Number(elevalue) * (Number(magazine) * (Number(eleper) / Number(100)));
     let total = (((Number(magazine) * Number(damagebasic)) + Number(crit) + Number(element)) / ((Number(magazine) / Number(rps)) + Number(reload))) * Number(projectiles);
     let dps = Number(total) + Number(effect);
-    dps += " DPS (Damage Per Second)";
+    count++;
+    dps += " DPS (Damage Per Second) senjata ke " + count;
+    setTimeout(() => {
+    storage();
+    }, 500);
+
+function storage() {
+  const outputDiv = document.getElementById('outputDiv');
+  const inputValue = document.getElementById('showinputhere').innerText;
+  localStorage.setItem('storedStrings', inputValue);
+  // Event listener untuk tombol Tampilkan
+      // Mendapatkan nilai dari local storage
+      const storedData = localStorage.getItem('storedStrings');
+
+      // Memeriksa apakah ada data yang disimpan di local storage
+      if (storedData) {
+        const parsedData = [storedData]; // Mengubah data yang diambil menjadi array tunggal
+console.log(parsedData)
+        // Menampilkan setiap nilai dalam elemen outputDiv
+        parsedData.forEach((data) => {
+        console.log(data)
+          const paragraph = document.createElement('p');
+          paragraph.textContent = data;
+          outputDiv.appendChild(paragraph);
+        });
+      } else {
+        outputDiv.textContent = 'Tidak ada data yang disimpan';
+      }
+
+      }
+
     if (dps){
         document.getElementById("showinputhere").innerHTML = dps;
     }
@@ -92,4 +133,4 @@ function displayMessage(){
 	if (multi < 1) {
 		ErrAlert(0,"Multiplier Of Base Damage");
 	}
-}
+	}
