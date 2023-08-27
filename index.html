@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta chrset="UTF 8">
- <meta http-equiv="cache-control" content="no-cache"> 
-<meta http-equiv="expires" content="0"> 
-<meta http-equiv="pragma" content="no-cache">
-<title>DPS Calculator General - Daffabot</title>  
-<link rel="stylesheet" href="./css/index.css">   
-</head>
-<body>
-<script src="./js/dps-calc.js"></script>
-<h2>DPS CALCULATOR</h2>
-<h3>Damage Per Second use for general shooter game</h3>
+  <head>
+    <meta chrset="UTF 8" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <title>DPS Calculator General - Daffabot</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <script src="./js/dps-calc.js"></script>
+    <h2>DPS CALCULATOR</h2>
+    <h3>Damage Per Second use for general shooter game</h3>
 
-<h4>Magazine Size: <input type="number" id="magazine" min="0"></h4>
-  
-<h4>Round Per Second: <input type="number" id="rps" min="0"></h4>
-    
-<h4>Reload Time (Second): <input type="number" id="reload" min="0"></h4>
-    
-<h4>Damage Per Bullet: <input type="number" id="damagebasic"></h4>
-    
-<h4>Projectiles: <input type="number" id="projectiles" min="0" value="1"></h4>
-<hr>
-<h3>(optional)</h3>
-    
-<h4>Chance Crit %: <input type="number" id="chan" min="1" value="100"></h4>
-  
-<h4>(Crit) Multiplier Of Base Damage: <input type="number" id="multi" min="1" value="1"> X Base Damage</h4>
-    
-<h4>Effect Damage: <input type="number" id="effvalue"> Damage/ <input type="number" id="period" min="1" value="1" placeholder="1" required>Second</h4>
-    
-<h4>Chance Element %: <input type="number" id="eleper" min="1" value="100"></h4>
-    
-<h4>Element Damage: <input type="number" id="elevalue"></h4>
-    
-  <button onclick="displayMessage()" href="javascript:;" type="submit">Count</button> <button onclick="clearText();" href="javascript:;">Clear All</button> <button onclick="openDonate();" href="javascript:;">Donate</button>
+    <h4>Magazine Size: <input type="number" id="magazine" min="0" /></h4>
 
+    <h4>Round Per Second: <input type="number" id="rps" min="0" /></h4>
 
-<br><br>
-<div id="showinputhere"></div><br>
-<h5>Senjata yang tersimpan</h5>
-<div id="outputDiv"></div>
-</body>
+    <h4>Reload Time (Second): <input type="number" id="reload" min="0" /></h4>
+
+    <h4>Damage Per Bullet: <input type="number" id="damagebasic" /></h4>
+
+    <h4>Projectiles: <input type="number" id="projectiles" min="0" value="1" /></h4>
+    <hr />
+    <h3>(optional)</h3>
+
+    <h4>Chance Crit %: <input type="number" id="chan" min="1" value="100" /></h4>
+
+    <h4>(Crit) Multiplier Of Base Damage: <input type="number" id="multi" min="1" value="1" /> X Base Damage</h4>
+
+    <h4>Effect Damage: <input type="number" id="effvalue" /> Damage/ <input type="number" id="period" min="1" value="1" placeholder="1" required />Second</h4>
+
+    <h4>Chance Element %: <input type="number" id="eleper" min="1" value="100" /></h4>
+
+    <h4>Element Damage: <input type="number" id="elevalue" /></h4>
+
+    <button onclick="displayMessage()" href="javascript:;" type="submit">Count</button> <button onclick="clearText();" href="javascript:;">Clear All</button> <button onclick="openDonate();" href="javascript:;">Donate</button>
+
+    <br /><br />
+    <div id="showinputhere"></div>
+    <br />
+    <h5>Senjata yang tersimpan</h5>
+    <div id="outputDiv"></div>
+  </body>
 </html>
