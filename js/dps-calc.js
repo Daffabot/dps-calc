@@ -2,6 +2,7 @@
 //============================================================================
 // v0.01 - initial start of project totally works
 // v0.02 - add a save local storage
+// v0.03 - fix local storage to ensure all data is saved and not erased on refresh
 //============================================================================
 //Visit Daffabot (https://github.com/Daffabot) for script in github
 //Credit must stay intact for use
@@ -25,12 +26,12 @@ function clearText() {
   document.getElementById("magazine").value = "";
   document.getElementById("reload").value = "";
   document.getElementById("rps").value = "";
-  document.getElementById("projectiles").value = "";
+  document.getElementById("projectiles").value = "1";
   //optional
   document.getElementById("chan").value = "";
-  document.getElementById("multi").value = "";
+  document.getElementById("multi").value = "1";
   document.getElementById("effvalue").value = "";
-  document.getElementById("period").value = "";
+  document.getElementById("period").value = "1";
   document.getElementById("eleper").value = "";
   document.getElementById("elevalue").value = "";
   //calc
@@ -78,25 +79,32 @@ function displayMessage() {
   function storage() {
     const outputDiv = document.getElementById("outputDiv");
     const inputValue = document.getElementById("showinputhere").innerText;
-    localStorage.setItem("storedStrings", inputValue);
-    // Event listener untuk tombol Tampilkan
-    // Mendapatkan nilai dari local storage
-    const storedData = localStorage.getItem("storedStrings");
-
-    // Memeriksa apakah ada data yang disimpan di local storage
+  
+    // Mendapatkan nilai yang sudah ada di local storage (jika ada)
+    let storedData = localStorage.getItem("storedStrings");
+    console.log(storedData);
+    // Mendefinisikan array untuk menyimpan data
+    let dataArray = [];
+  
     if (storedData) {
-      const parsedData = [storedData]; // Mengubah data yang diambil menjadi array tunggal
-      console.log(parsedData);
-      // Menampilkan setiap nilai dalam elemen outputDiv
-      parsedData.forEach((data) => {
-        console.log(data);
-        const paragraph = document.createElement("p");
-        paragraph.textContent = data;
-        outputDiv.appendChild(paragraph);
-      });
-    } else {
-      outputDiv.textContent = "Tidak ada data yang disimpan";
+      // Jika sudah ada data di local storage, mengonversi data menjadi array
+      dataArray = JSON.parse(storedData);
     }
+  
+    // Menambahkan nilai baru ke dalam array
+    dataArray.push(inputValue);
+    console.log(dataArray);
+    // Menyimpan data yang sudah diubah ke dalam local storage
+    localStorage.setItem("storedStrings", JSON.stringify(dataArray));
+  
+    // Menampilkan setiap nilai dalam elemen outputDiv
+    outputDiv.innerHTML = "";
+  
+    dataArray.forEach((data) => {
+      const paragraph = document.createElement("p");
+      paragraph.textContent = data;
+      outputDiv.appendChild(paragraph);
+    });
   }
 
   if (dps) {
