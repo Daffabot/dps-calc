@@ -35,11 +35,11 @@
 
     <h4>Element Damage: <input type="number" id="elevalue" /></h4>
 
-    <button id="display" type="submit">Count Me</button>
-    <button id="clear">Clear All</button>
-    <button id="save">Save</button>
-    <button id="deleteSave">Delete All Save</button>
-    <button id="donate">Donate</button>
+    <button id="display" type="button" onclick="display()">Count Me</button>
+    <button id="clear" type="button" onclick="cleared()">Clear All</button>
+    <button id="save" type="button" onclick="readWindow.alert('Nama senjata anda', 'Simpan Data Senjata')">Save</button>
+    <button id="deleteSave" type="button" onclick="deleted()">Delete All Save</button>
+    <button id="donate" type="button" onclick="donate()">Donate</button>
 
     <br /><br />
     <div id="showinputhere"></div>

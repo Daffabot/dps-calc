@@ -24,7 +24,7 @@ function ReadWindow() {
         document.getElementById("dialogboxhead").innerHTML = '<i class="fa fa-exclamation-circle" aria-hidden="true"></i> ' + title;
       }
       document.getElementById("dialogboxbody").innerHTML = message + ' <input type="text" id="inputText">';
-      document.getElementById("dialogboxfoot").innerHTML = '<button class="pure-material-button-contained active" id="closed" onclick="ok();">SAVE</button>';
+      document.getElementById("dialogboxfoot").innerHTML = '<button class="pure-material-button-contained active" id="closed" onclick="ok()" type="button">SAVE</button>';
       window.scrollTo(0, 0);
     } else {
       document.getElementById("showinputhere").innerHTML = "Data senjata yang mau di save gak ada bang";
