@@ -15,7 +15,8 @@ input[type="number"] {
   width: 5em;
 }
 
-#inputText {
+#inputText,
+#inputan {
   background-color: #FFF;
 }
 
@@ -283,4 +284,27 @@ button:hover {
   padding:10px; 
   text-align:right; 
 }
+
+.cancer {
+  background-color: rgb(175, 47, 61);
+}
 /*#endregion Alert*/
+.para {
+  border: 3px solid darkslategrey;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  #dialogbox {
+    width: 85%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .edit::after {
+    content: " Edit";
+  }
+  .trash::after {
+    content: " Delete";
+  }
+}
