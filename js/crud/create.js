@@ -22,35 +22,25 @@ function core() {
   if (dps) {
     document.getElementById("showinputhere").innerHTML = dps;
   }
-  if (isNaN(magazine)) {
+  if (!magazine) {
     ErrAlert(1, "Magazine Size");
-  }
-  if (isNaN(rps)) {
-    ErrAlert(1, "Round Per Second");
-  }
-  if (isNaN(reload)) {
-    ErrAlert(1, "Reload Time");
-  }
-  if (isNaN(damagebasic)) {
-    ErrAlert(1, "Damage Per Bullet");
-  }
-  if (isNaN(multi)) {
-    ErrAlert(1, "Multiplier Of Base Damage");
-  }
-  //if base values are less than 1 than we cannot compute.
-  if (magazine < 1) {
+  } else if (magazine < 1) {
     ErrAlert(0, "Magazine Size");
   }
-  if (rps < 1) {
+  if (!rps) {
+    ErrAlert(1, "Round Per Second");
+  } else if (rps < 0) {
     ErrAlert(0, "Round Per Second");
   }
-  if (damagebasic < 1) {
-    ErrAlert(0, "Damage Per Bullet");
+  if (!reload) {
+    ErrAlert(1, "Reload Time");
   }
-  if (reload < 1) {
-    ErrAlert(0, "Reload Time");
+  if (!damagebasic) {
+    ErrAlert(1, "Damage Per Bullet");
   }
-  if (multi < 1) {
+  if (!multi) {
+    ErrAlert(1, "Multiplier Of Base Damage");
+  } else if (multi < 1) {
     ErrAlert(0, "Multiplier Of Base Damage");
   }
 }
