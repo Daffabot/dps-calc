@@ -9,6 +9,7 @@
 // v0.07 - fix the save function and always brings up stored weapon
 // v0.08 - add CRUD and fix everything (no save & edit input validation yet)
 // v0.09 - fix responsive css
+// v0.10 - fix error alert
 //============================================================================
 //Visit Daffabot (https://github.com/Daffabot) for script in github
 //Credit must stay intact for use
